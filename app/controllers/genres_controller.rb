@@ -1,8 +1,8 @@
 class GenresController < ApplicationController
-    rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
+    # rescue_from ActiveRecord::RecordNotFound, with: :render_not_found
     def show
         genre = Genre.find_by(id: params[:id])
-        render json: genre, :include => {:favorite, :genre}, status: :ok
+        render json: genre, status: :ok
     end
 
     def index

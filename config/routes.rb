@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
   resources :users, only:[:create, :show, :index]
   resources :profiles, only:[:show, :create, :update, :destroy, :index] 
-  resources :genres, only:[:show, :index]
-  resources :favorites, only:[:index]
+  resources :genres, only:[:show, :index] 
+  resources :favorites, only:[:index, :show]
+  resources :liked_genres, only:[:index, :show, :create, :destroy]
 end
