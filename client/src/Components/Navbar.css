@@ -1,0 +1,27 @@
+nav{
+    padding-top: 1em;
+    font-family:fantasy;
+}
+
+.title{
+    color: #fff;
+    text-align: left;
+    text-decoration: none;
+    font-size: 1.5rem;
+    float: left;
+}
+.nav-details{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    float: right;
+    padding-right: 10px;
+}
+.nav-btn{
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    float: right; 
+    border-radius:10%;
+    background: rgb(30, 42, 207);
+}
