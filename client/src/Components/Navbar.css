@@ -1,6 +1,5 @@
 nav{
     padding-top: 1em;
-    font-family:fantasy;
 }
 
 .title{
@@ -24,4 +23,6 @@ nav{
     float: right; 
     border-radius:10%;
     background: rgb(30, 42, 207);
+    height: 2.2rem;
+    justify-self: start;
 }

@@ -4,18 +4,12 @@ function Movie({movie, searchText, searchURL}) {
 
     const imageURL = `https://image.tmdb.org/t/p/w500/${movie.poster_path}`;
     // use original for larger pic and backdrop path for background
-    console.log(movie)
     return (
-        <div>
-            <div class="card mb-3">
-            <img src={imageURL} className="poster" alt="..."/>
-            <div class="card-body">
-                <h5 class="card-title">{movie.original_title}</h5>
-                <p class="card-text">{movie.overview}</p>
-                <p class="card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-            </div>
+        <div className="searchResults">
+            <img src={imageURL} className="poster popularImage" alt="..."/>
+            <div className="card-body">
+                <h5 >{movie.original_title}</h5>
+                <p>{movie.overview}</p>
             </div>
         </div>
     )
