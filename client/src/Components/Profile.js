@@ -5,7 +5,6 @@ import Slider from "react-slick";
 
 // https://api.themoviedb.org/3/review/436969?api_key=dfb1cba31ae6f1dda39d14acaa225d56
 function Profile({profile}) {
-    console.log(profile);
 
     var settings = {
         infinite: true,
@@ -20,7 +19,11 @@ function Profile({profile}) {
     const [favGenre, setFavGenre] = useState("comedy")
     const [username, setUsername] = useState("")
     const [genre, setGenre] = useState([])
+    const [watched, setWatched] = useState([])
     const [showRecommendations, setShowRecommendations] = useState(false)
+    const [showWatched, setShowWatched] = useState(false)
+    const [movieID, setMovieID] = useState("")
+
     
     const API = `https://api.themoviedb.org/3/discover/movie?api_key=dfb1cba31ae6f1dda39d14acaa225d56&with_genre=${favGenre}`
     async function getGenre(){
@@ -37,12 +40,31 @@ function Profile({profile}) {
           </div>
         </div>
       });
-
-
+      async function getWatched(){
+        const result = await fetch("http://localhost:3000/favorites");
+        const items = await result.json();
+        const filtered = items.filter(item => item.profile_id === profile.id)
+        // console.log(filtered)
+        filtered.map(item => {
+          getMovie(item)
+        })
+        setShowWatched(!showWatched)
+      }
+      function getMovie(movie){
+        fetch(`https://api.themoviedb.org/3/movie/${movie.movie_id}?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US`)
+            .then(result => result.json())
+            .then(data => watched.push(data))//if data !== watched
+            .then(console.log(watched))
+      }
+      const watchedRow = watched.map(item => {
+      return <div class="col mb-1">
+        <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="..."/>
+        </div>
+    })
     return (
                 <div className="profileContainer row ">
                     <h1 className="" style={{color: '#fff'}}>Welcome {profile.username}!</h1>
-                    <img className="profileImage col" src={profile.image} alt="..."/>
+                    {/* <img className="profileImage col" src={profile.image} alt="..."/> */}
                     <table class="table profileData col">
                     <tbody>
                         <tr>
@@ -67,7 +89,15 @@ function Profile({profile}) {
                 </table>
                 <div><br/>
                     <div className="row">
-                    <button className="col">Watched</button>
+                    <button className="col" onClick={() => getWatched()}>Watched List</button>
+                    {showWatched ? 
+                        <div>
+                        <h3 style={{color: '#fff', textAlign: 'left'}}>Watched Movies</h3> 
+                        <Slider {...settings}> 
+                        {watchedRow}
+                        </Slider> 
+                        </div>
+                    : null}
                     <button className="col" onClick={() => getGenre()}>Recommendations</button>
                     {showRecommendations ? 
                     <div>

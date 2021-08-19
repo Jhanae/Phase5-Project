@@ -3,13 +3,6 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-nav {
-  position: relative;
-  top: 0;
-  width: 100%;
-  height: 50px;
-  background: linear-gradient(170deg, rgb(0, 0, 2), midnightblue);
-}
 .trending-div{
   background:black;
   height: 150vh;
@@ -63,7 +56,7 @@ nav {
   color: white;
 }
 .searchPage{
-  background: linear-gradient(170deg, midnightblue, rgb(0, 0, 2));
+  background: rgb(15, 23, 56);
   color: white;
 }
 .searchBtn {
@@ -93,4 +86,9 @@ nav {
     rgba(9, 98, 134, 0.9) 100%
   );
   box-shadow: 0 50px 70px -20px rgba(10, 16, 34, 0.8);
+}
+.moviePage{
+  background:rgb(0, 0, 2);
+  color: #fff;
+  font-size: larger;
 }

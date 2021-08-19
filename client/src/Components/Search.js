@@ -11,12 +11,11 @@ function SearchPage(){
     // const [movie, movieElement] = useState([])
     // const URL = 'https://api.themoviedb.org/3/search/movie?api_key=dfb1cba31ae6f1dda39d14acaa225d56';
     const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=dfb1cba31ae6f1dda39d14acaa225d56&query=${searchText}`
-    async function handleSubmit(e){
-      e.preventDefault()
-      
-        const res = await fetch(searchURL);
-        const movies = await res.json();
-        setMovies(movies.results)
+    function handleSubmit(e){
+        e.preventDefault()
+        fetch(searchURL)
+        .then(response => response.json())
+        .then(data => setMovies(data.results))
     } 
     const videoURL = `https://api.themoviedb.org/3/movie/8966/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US`
     const movieElement = movies.map((item) => <Movie movie={item} setMovieId={item.id} searchURL={searchURL} searchText={searchText}/>)

@@ -4,7 +4,7 @@ import './Login.css';
 import { useHistory } from 'react-router-dom';
 
 function Login({ loggedIn, setLoggedIn}) {
-    // let history = useHistory();
+    let history = useHistory();
 
     // States
     const [password, setPassword] = useState("")
@@ -29,6 +29,7 @@ function Login({ loggedIn, setLoggedIn}) {
             if (data.authenticated){
                 getProfileData(data.profile.id)
                 alert("Logged in successfully")
+                history.push('/profile')
             }
             else{
                 alert("Incorrect username or password")

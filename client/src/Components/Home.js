@@ -3,8 +3,11 @@ import {useState, useEffect } from 'react'
 import Slider from "react-slick";
 // import MovieElement from './MovieElement'
 import ReactPlayer from 'react-player';
+import { useHistory } from 'react-router-dom';
 
 function Home() {
+  let history = useHistory();
+
     const [popular, setPopular] = useState([])
     const [nowPlaying, setNowPlaying] = useState([])
     const [upcoming, setUpcoming] = useState([])
@@ -27,6 +30,11 @@ function Home() {
       slidesToShow: 4,
       slidesToScroll: 2
     };
+    function handleClick(movie){
+      console.log(movie)
+      localStorage.setItem('movieData',JSON.stringify(movie))
+      history.push('/movie')
+    }
 
     useEffect(() => {
         // `https://image.tmdb.org/t/p/w500/${item.poster_path}`
@@ -43,41 +51,14 @@ function Home() {
       const url = `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56`
       fetch(url)
       .then(res => res.json())
-      .then((data) => setPath(data.results[1].key))
+      .then((data) => console.log(data.results[1].key))
   
       setPopularTrailer(`https://www.youtube.com/embed/${path}`)
       setPShowTrailer(!showPTrailer)
     }
-    function TrendingTrailer(movieID){
-      const url = `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56`
-      fetch(url)
-      .then(res => res.json())
-      .then((data) => setPath(data.results[0].key))
-  
-      setTrendingTrailer(`https://www.youtube.com/embed/${path}`)
-      setTShowTrailer(!showTTrailer)
-    }
-    function viewNPTrailer(movieID){
-      const url = `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56`
-      fetch(url)
-      .then(res => res.json())
-      .then((data) => setPath(data.results[1].key))
-  
-      setNPTrailer(`https://www.youtube.com/embed/${path}`)
-      setNShowTrailer(!showNTrailer)
-    }
-    function viewUpcomingTrailer(movieID){
-      const url = `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56`
-      fetch(url)
-      .then(res => res.json())
-      .then((data) => setPath(data.results[1].key))
-  
-      setUpcomingTrailer(`https://www.youtube.com/embed/${path}`)
-      setUShowTrailer(!showUTrailer)
-    }
 
     const popularRow = popular.map(item => {
-    return <div onClick={() => viewPopTrailer(item.id)} className="card">
+    return <div onClick={() => handleClick(item)} >
         <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
          </div>
        
@@ -93,7 +74,7 @@ function Home() {
       
     }, [])
     const trendingRow = trending.map(item => {
-      return <div onClick={() => TrendingTrailer(item.id)}  class="col mb-1">
+      return <div onClick={() => handleClick(item)}  class="col mb-1">
           <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
       </div>
     })
@@ -109,7 +90,7 @@ function Home() {
             
           }, [])
           const nowPlayingRow = nowPlaying.map(item => {
-            return <div onClick={() => viewNPTrailer(item.id)}  class="col mb-1">
+            return <div onClick={() => handleClick(item)} class="col mb-1">
                 <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
             </div>
           })
@@ -124,7 +105,7 @@ function Home() {
             fetchUpcoming()
           }, [])
           const upcomingRow = upcoming.map(item => {
-            return <div onClick={() => viewUpcomingTrailer(item.id)}  class="col mb-1">
+            return <div onClick={() => handleClick(item)} class="col mb-1">
                 <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
             </div>
           })
@@ -135,53 +116,21 @@ function Home() {
           <Slider {...settings}>
           {popularRow}
           </Slider>
-          {showPTrailer ? 
-          <ReactPlayer 
-          className="mediaPlayer" 
-          width="1080px" 
-          height="480px" 
-          controls 
-          url={popularTrailer} />
-        : null}
           <br/>
           <h1 className="rowTitle">Trending</h1>
           <Slider {...settings}>
           {trendingRow}
-          </Slider>
-          {showTTrailer ? 
-          <ReactPlayer 
-          className="mediaPlayer" 
-          width="1080px" 
-          height="480px" 
-          controls 
-          url={trendingTrailer} />
-        : null}
+          </Slider>      
           <br/>
           <h1 className="rowTitle">Now Playing</h1>
           <Slider {...settings}>
           {nowPlayingRow}
           </Slider>
-          {showNTrailer ? 
-          <ReactPlayer 
-          className="mediaPlayer" 
-          width="1080px" 
-          height="480px" 
-          controls 
-          url={npTrailer} />
-        : null}
           <br/>
           <h1 className="rowTitle">Upcoming Movies</h1>
           <Slider {...settings}>
           {upcomingRow}
           </Slider>
-          {showUTrailer ? 
-          <ReactPlayer 
-          className="mediaPlayer" 
-          width="1080px" 
-          height="480px" 
-          controls 
-          url={upcomingTrailer} />
-        : null}
         </div>
 
     )

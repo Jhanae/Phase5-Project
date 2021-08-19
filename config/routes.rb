@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :users, only:[:create, :show, :index, :destroy]
   resources :profiles, only:[:show, :create, :update, :destroy, :index] 
   resources :genres, only:[:show, :index] 
-  resources :favorites, only:[:index, :show]
+  resources :favorites, only:[:index, :show, :create, :destroy]
   resources :liked_genres, only:[:index, :show, :create, :destroy]
   post '/login', to: 'auth#login'
   post '/signup', to: 'auth#signup'

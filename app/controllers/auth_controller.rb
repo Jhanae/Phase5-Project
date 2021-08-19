@@ -2,13 +2,13 @@ class AuthController < ApplicationController
     def login
         user = User.find_by(email: params[:email])
         if user && user.authenticate(params[:password])
-            token = encode({user_id: user.id})
+            # token = JsonWebToken.encode({ user_id: user.id })
             render json: {
                 authenticated: true,
                 message: "user logged in",
                 # token: token,
-                user: user
-                # profile: profile
+                user: user,
+                profile: user.profile,
             }, status: :accepted
         else
             render json: {
@@ -22,7 +22,7 @@ class AuthController < ApplicationController
         userID = user.id
         profile = Profile.create(profile_params)
         if user.valid?
-            render :json => {profile}, status: :created
+            render :json => profile, status: :created
         else
             render json: {"errors:" => "Invalid Credentials"}
         end

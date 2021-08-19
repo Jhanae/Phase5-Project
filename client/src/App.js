@@ -11,6 +11,7 @@ import Login from './Components/Login'
 import Profile from './Components/Profile';
 import Signup from './Components/Signup';
 import EditProfile from './Components/EditProfile'
+import MovieElement from './Components/MovieElement';
 
 function App() {
   // const [movieData, setMovieData] = useState([])
@@ -42,6 +43,7 @@ function App() {
         <Route exact path="/profile" component={() => <Profile profile={profile} />}/>
         <Route exact path="/signup" component={() => <Signup setLoggedIn={setLoggedIn} loggedIn={loggedIn} setProfile={setProfile}/>}/>
         <Route exact path="/update-profile" component={() => <EditProfile profile={profile}/>} />
+        <Route exact path="/movie" component={() => <MovieElement />}/>
       </Switch>
       </Router>
     </div>

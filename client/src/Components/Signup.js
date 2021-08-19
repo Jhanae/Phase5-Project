@@ -28,32 +28,16 @@ function Signup({setLoggedIn, loggedIn}) {
         await fetch("http://localhost:3000/users", requestOptions)
         .then(res => res.json())
         .then(data =>  console.log(data))
-        // .catch(error => console.log(error))
 
-
-        // await fetch("http://localhost:3000/profiles", {
-        //     method: "POST",
-        //     headers: {
-        //     "Content-Type": "application/json",
-        //     },
-        //     body: JSON.stringify({ user_id: userID, username, favActor, favPeriod, favRegion })
-        // })
-        // .then(res => res.json())
-        // .then(data => console.log(data))
-        // .then(setLoggedIn(!loggedIn))
-
-//         <div class="alert alert-success" role="alert">
-//   A simple success alert—check it out!
-// </div>
     }
     const [page, setPage] = useState(1)
     function OnboardingOne(){
         return <div>
             <h2 style={{color: '#fff'}}>Sign up</h2><br/>
             <label>Email</label>
-            <input onChange={(e) => setEmail(e.target.value)} />
+            <input onChange={(e) => setEmail(e.target.value)} value={email} type="text"/>
             <label htmlFor="exampleInputPassword1">Password</label>
-            <input type="password" onChange={(e) => setPassword(e.target.value)} id="exampleInputPassword1"/>
+            <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} id="exampleInputPassword1"/>
         </div>
     }
     function OnboardingTwo(){
@@ -115,10 +99,11 @@ function Signup({setLoggedIn, loggedIn}) {
         <div>
             <section className="login">
             <div className="loginContainer">
-            {page === 1 && <OnboardingOne />}
-            {page === 2 && <OnboardingTwo />}
-            {page === 3 && <OnboardingThree />}
-            {page === 4 && <OnboardingFour />}
+
+            {page === 1 ? <OnboardingOne /> : null}
+            {page === 2 ? <OnboardingTwo /> : null}
+            {page === 3 ? <OnboardingThree /> : null}
+            {page === 4 ? <OnboardingFour /> : null}
             {page < 4 ? 
             <div className="btnContainer">
             <button className="loginBtn" onClick={() => NextPage()}>Continue</button>
