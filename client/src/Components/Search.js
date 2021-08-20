@@ -7,8 +7,8 @@ function SearchPage(){
 
     const [searchText, setSearchText] = useState("")
     const [movies, setMovies] = useState([])
-    // const [movieId, setMovieId] = useState("")
-    // const [movie, movieElement] = useState([])
+    const [clicked, setClicked] = useState(false)
+
     // const URL = 'https://api.themoviedb.org/3/search/movie?api_key=dfb1cba31ae6f1dda39d14acaa225d56';
     const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=dfb1cba31ae6f1dda39d14acaa225d56&query=${searchText}`
     function handleSubmit(e){
@@ -16,8 +16,9 @@ function SearchPage(){
         fetch(searchURL)
         .then(response => response.json())
         .then(data => setMovies(data.results))
+        setClicked(!clicked)
     } 
-    const videoURL = `https://api.themoviedb.org/3/movie/8966/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US`
+    // const videoURL = `https://api.themoviedb.org/3/movie/8966/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US`
     const movieElement = movies.map((item) => <Movie movie={item} setMovieId={item.id} searchURL={searchURL} searchText={searchText}/>)
     
 
@@ -32,13 +33,12 @@ function SearchPage(){
         <div className="searchPage">
             <br/><br/><br/><br/>
             <div className="searchContainer">
-            <h1 className="header">Search Movies</h1>
+            <h1 className="header">Search Movies</h1><br/>
             <form onSubmit={(e) => handleSubmit(e)} >
-            {/* <label for="validationServer01">Title:    </label> */}
-            <input onChange={(e) => setSearchText(e.target.value)} id="exampleInputPassword1" required/>
-            <br/>
+            <input type="text" onChange={(e) => setSearchText(e.target.value)} className="searchBox" />
             <button className="searchBtn" type="submit">Search</button>
             </form>
+            {clicked ? <p>Showing {movies.length} results for {searchText}.</p> : null}
             </div>
             <br/><br/><br/>
             {movieElement}
