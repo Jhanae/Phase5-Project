@@ -4,16 +4,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-function EditProfile({ profileID }) {
+function EditProfile({profileID}) {
   let history = useHistory();
 
   const [email, setEmail] = useState("");
-  const [bio, setBio] = useState("");
+  const [favGenre, setFavGenre] = useState("");
   const [password, setPassword] = useState("");
-  const [location, setLocation] = useState("");
-  const [gender, setGender] = useState("");
+  const [favActor, setFavActor] = useState("");
+  const [favRegion, setFavRegion] = useState("");
   const [name, setName] = useState("");
+  const [profilePicture, setProfilePicture] = useState("");
 
+  
   const useStyles = makeStyles((theme) => ({
     root: {
       display: "flex",
@@ -40,12 +42,13 @@ function EditProfile({ profileID }) {
       fontSize: "3rem",
     },
   }));
-  const classes = useStyles();
+  // const classes = useStyles();
   const updatedProfile = {
     username: name,
-    location: location,
-    bio: bio,
-    gender: gender,
+    favActor: favActor,
+    favGenre: favGenre,
+    favRegion: favRegion
+    // gender: gender,
   };
   function handleClick(e) {
     e.preventDefault();
@@ -57,16 +60,20 @@ function EditProfile({ profileID }) {
       body: JSON.stringify(updatedProfile),
     })
       .then((response) => response.json)
-      .then((data) => history.push("/profile"));
+      .then((data) => localStorage.setItem('profile', JSON.stringify(data)));
   }
+
+  // function setFile(image){
+  //   console.log(image)
+  // }
   return (
     <div className="editProfile">
-      <h1 className={classes.title}>
-        Update <span className={classes.colorText}>Profile</span>
+      <h1 >
+        Update <span >Profile</span>
       </h1>
       <br />
       <br />
-      <Form>
+      <Form onClick={(e) => handleClick(e)} >
         <Form.Group className="mb-3">
           <Form.Label>Username:</Form.Label>
           <Form.Control
@@ -75,47 +82,64 @@ function EditProfile({ profileID }) {
           />
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Email address:</Form.Label>
-          <Form.Control
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="Enter email"
-          />
+          <Row>
+            <Col>
+        <label htmlFor="exampleInputPassword1">Genre:</label>
+        <select onChange={(e) => setFavGenre(e.target.value)} className="form-select signupDropdown">
+            <option selected >Select your favorite genre</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Crime">Crime</option>
+            <option value="Drama">Drama</option>
+            <option value="Comedy">Fantasy</option>
+            <option value="Horror">Horror</option>
+            <option value="Romance">Romance</option>
+            <option value="Thriller">Thriller</option>
+            <option value="Western">Western</option>
+        </select>
+        </Col>
+        <Col>
+        <label htmlFor="exampleInputPassword1">Actor:</label>
+        <select onChange={(e) => setFavActor(e.target.value)}  className="form-select signupDropdown">
+            <option selected >Select your favorite actor</option>
+            <option value="Samuel L. Jackson">Samuel L. Jackson</option>
+            <option value="Will Smith">Will Smith</option>
+            <option value="Johnny Depp">Johnny Depp</option>
+            <option value="Dwayne 'The Rock' Johnson">Dwayne "The Rock" Johnson</option>
+            <option value="Eddie Murphy">Eddie Murphy</option>
+            <option value="Kevin Hart">Kevin Hart</option>
+            <option value="Robert Downey, Jr.">Robert Downey, Jr.</option>
+            <option value="Idris Elba">Idris Elba</option>
+            <option value="Vin Diesel">Vin Diesel</option>
+            <option value="Scarlett Johansson">Scarlett Johansson</option>
+        </select>
+        </Col>
+        </Row>
         </Form.Group>
         <Form.Group className="mb-3">
-          <Form.Label>Password:</Form.Label>
+        <label htmlFor="exampleInputPassword1">Region:</label>
+        <select onChange={(e) => setFavRegion(e.target.value)}  className="form-select signupDropdown">
+            <option selected >Select your preferred region</option>
+            <option value="USA">USA</option>
+            <option value="Nollywood">Nollywood</option>
+            <option value="Bollywood">Bollywood</option>
+            <option value="Thailand">Thailand</option>
+            <option value="KDrama">KDrama</option>
+            <option value="Turkish">Turkish</option>
+
+        </select>
+          {/* <Form.Label>Password:</Form.Label>
           <Form.Control
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Enter Password"
-          />
+          /> */}
+          {/* <input type="file" onChange={(e) => setFile(e.target.value)}/> */}
         </Form.Group>
-        <Row>
-          <Col>
-            Location:
-            <Form.Control
-              onChange={(e) => setLocation(e.target.value)}
-              placeholder="Location"
-            />
-          </Col>
-          <Col>
-            Gender:
-            <Form.Control
-              onChange={(e) => setGender(e.target.value)}
-              placeholder="Gender"
-            />
-          </Col>
-        </Row>
-        <br />
         <Form.Group className="mb-3">
-          <Form.Label>Bio:</Form.Label>
-          <Form.Control
-            onChange={(e) => setBio(e.target.value)}
-            type="Bio"
-            placeholder="Bio"
-          />
         </Form.Group>
-        <button onClick={handleClick} className="profile-btn">
+        <button className="profile-btn">
           Save Changes
         </button>
       </Form>

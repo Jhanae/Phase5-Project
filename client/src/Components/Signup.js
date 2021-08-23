@@ -107,12 +107,12 @@ function Signup({setLoggedIn, loggedIn}) {
             {page < 4 ? 
             <div className="btnContainer">
             <button className="loginBtn" onClick={() => NextPage()}>Continue</button>
-            <p>Have an account? <a href="/login">Sign in</a></p>
+            <p>Have an account? <a href="/">Sign in</a></p>
             </div>
             :
             <div className="btnContainer">
                 <button className="loginBtn" onClick={(e) => handleSignup(e)}>Sign up</button>
-                <p>Have an account? <a href="/login">Sign in</a></p>
+                <p>Have an account? <a href="/">Sign in</a></p>
             </div>} 
             </div>
             </section>

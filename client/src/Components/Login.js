@@ -3,7 +3,7 @@ import {useState } from 'react'
 import './Login.css';
 import { useHistory } from 'react-router-dom';
 
-function Login({ loggedIn, setLoggedIn}) {
+function Login({ loggedIn, setLoggedIn, setProfile}) {
     let history = useHistory();
 
     // States
@@ -28,6 +28,7 @@ function Login({ loggedIn, setLoggedIn}) {
         .then(data => {
             if (data.authenticated){
                 getProfileData(data.profile.id)
+                console.log(data)
                 alert("Logged in successfully")
                 history.push('/profile')
             }
@@ -42,6 +43,8 @@ function Login({ loggedIn, setLoggedIn}) {
         await fetch(`http://localhost:3000/profiles/${profileID}`)
         .then(response => response.json())
         .then(data => {
+            console.log(data)
+            setProfile(data)
             localStorage.setItem('profile', JSON.stringify(data))
             localStorage.setItem('LoggedIn', true)
         })

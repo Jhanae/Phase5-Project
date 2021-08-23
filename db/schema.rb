@@ -38,12 +38,11 @@ ActiveRecord::Schema.define(version: 2021_08_10_185739) do
 
   create_table "profiles", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "favorited_id"
     t.string "username"
     t.string "image"
     t.string "fav_actor"
-    t.string "fav_timeperiod"
     t.string "fav_region"
+    t.string "fav_genre"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

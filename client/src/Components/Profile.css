@@ -47,3 +47,15 @@ button {
     cursor: pointer;
     margin: 1rem;
   }
+  .editProfile{
+      padding: 8rem;
+      background: radial-gradient(
+      ellipse at left bottom,
+      rgb(2, 3, 24) 0%,
+      #040b33e6 59%,
+      rgba(9, 98, 134, 0.9) 100%
+    );
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+  }

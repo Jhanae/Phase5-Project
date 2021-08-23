@@ -2,9 +2,13 @@ import React from 'react';
 import './Profile.css';
 import { useState, useEffect } from 'react'
 import Slider from "react-slick";
+import { useHistory } from 'react-router-dom';
 
 // https://api.themoviedb.org/3/review/436969?api_key=dfb1cba31ae6f1dda39d14acaa225d56
-function Profile({profile}) {
+function Profile() {
+  let history = useHistory();
+
+  const [profile, setProfile] = useState(JSON.parse(localStorage.getItem('profile')));
 
     var settings = {
         infinite: true,
@@ -16,14 +20,13 @@ function Profile({profile}) {
     const [favActor, setFavActor] = useState("")
     const [favPeriod, setFavPeriod] = useState("")
     const [favRegion, setFavRegion] = useState("")
-    const [favGenre, setFavGenre] = useState("comedy")
+    const [favGenre, setFavGenre] = useState(profile.fav_genre);
     const [username, setUsername] = useState("")
     const [genre, setGenre] = useState([])
     const [watched, setWatched] = useState([])
     const [showRecommendations, setShowRecommendations] = useState(false)
     const [showWatched, setShowWatched] = useState(false)
     const [movieID, setMovieID] = useState("")
-
     
     const API = `https://api.themoviedb.org/3/discover/movie?api_key=dfb1cba31ae6f1dda39d14acaa225d56&with_genre=${favGenre}`
     async function getGenre(){
@@ -40,6 +43,7 @@ function Profile({profile}) {
           </div>
         </div>
       });
+
       async function getWatched(){
         const result = await fetch("http://localhost:3000/favorites");
         const items = await result.json();
@@ -53,7 +57,10 @@ function Profile({profile}) {
       function getMovie(movie){
         fetch(`https://api.themoviedb.org/3/movie/${movie.movie_id}?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US`)
             .then(result => result.json())
-            .then(data => watched.push(data))//if data !== watched
+            .then(data => {
+              if(data !== watched)
+              watched.push(data)
+            })//if data !== watched
             .then(console.log(watched))
       }
       const watchedRow = watched.map(item => {
@@ -64,7 +71,7 @@ function Profile({profile}) {
     return (
                 <div className="profileContainer row ">
                     <h1 className="" style={{color: '#fff'}}>Welcome {profile.username}!</h1>
-                    {/* <img className="profileImage col" src={profile.image} alt="..."/> */}
+                    <img className="profileImage col" src={profile.image} alt="..."/>
                     <table class="table profileData col">
                     <tbody>
                         <tr>
@@ -101,14 +108,14 @@ function Profile({profile}) {
                     <button className="col" onClick={() => getGenre()}>Recommendations</button>
                     {showRecommendations ? 
                     <div>
-                        <h3 style={{color: '#fff', textAlign: 'left'}}>Favorite Genre: Comedy</h3>
+                        <h3 style={{color: '#fff', textAlign: 'left'}}>Favorite Genre: {favGenre}</h3>
                         <Slider {...settings}>
                         {genreRow}
                         </Slider>
                     </div>
                      : null}
                     </div>
-                    <button className="col">Edit Profile</button>
+                    <button onClick={() => history.push('/update-profile')} className="col">Edit Profile</button>
                 </div>
                 </div>
     )

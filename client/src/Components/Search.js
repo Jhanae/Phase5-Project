@@ -35,7 +35,7 @@ function SearchPage(){
             <div className="searchContainer">
             <h1 className="header">Search Movies</h1><br/>
             <form onSubmit={(e) => handleSubmit(e)} >
-            <input type="text" onChange={(e) => setSearchText(e.target.value)} className="searchBox" />
+            <input required type="text" onChange={(e) => setSearchText(e.target.value)} className="searchBox" />
             <button className="searchBtn" type="submit">Search</button>
             </form>
             {clicked ? <p>Showing {movies.length} results for {searchText}.</p> : null}

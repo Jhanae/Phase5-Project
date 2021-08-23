@@ -39,7 +39,7 @@ class ProfilesController < ApplicationController
 
     private
     def profile_params
-        params.permit(:user_id, :image, :favorited_id, :fav_actor, :username, :fav_timeperiod, :fav_region)
+        params.permit(:user_id, :image, :fav_actor, :username, :fav_timeperiod, :fav_region)
     end
     
     def render_not_found(invalid)

@@ -12,6 +12,7 @@ import Profile from './Components/Profile';
 import Signup from './Components/Signup';
 import EditProfile from './Components/EditProfile'
 import MovieElement from './Components/MovieElement';
+import Footer from './Components/Footer';
 
 function App() {
   // const [movieData, setMovieData] = useState([])
@@ -35,16 +36,17 @@ function App() {
       <Router>
       <Navbar loggedIn={loggedIn} />
       <Switch>
-        <Route exact path="/" component={Home}/>
+        <Route exact path="/home" component={Home}/>
         <Route exact path="/search" component={Search}/>
         <Route exact path="/trending" component={() => <Trending setTrailer={setTrailer} trailer={trailer} trending={trending}/>}/>
         <Route exact path="/search" component={Search}/>
-        <Route exact path="/login" component={() => <Login trending={trending[0]} setLoggedIn={setLoggedIn} loggedIn={loggedIn} profile={profile} setProfile={setProfile}/>}/>
-        <Route exact path="/profile" component={() => <Profile profile={profile} />}/>
+        <Route exact path="/" component={() => <Login trending={trending[0]} setLoggedIn={setLoggedIn} loggedIn={loggedIn} profile={profile} setProfile={setProfile}/>}/>
+        <Route exact path="/profile" component={() => <Profile profile={profile}/>}/>
         <Route exact path="/signup" component={() => <Signup setLoggedIn={setLoggedIn} loggedIn={loggedIn} setProfile={setProfile}/>}/>
-        <Route exact path="/update-profile" component={() => <EditProfile profile={profile}/>} />
+        <Route exact path="/update-profile" component={() => <EditProfile profile={profile} profileID={profile.id}/>} />
         <Route exact path="/movie" component={() => <MovieElement />}/>
       </Switch>
+      <Footer />
       </Router>
     </div>
   );
