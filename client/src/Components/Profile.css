@@ -34,11 +34,11 @@
     font-size: 1.5em;
 }
     
-button {
+.profileBtn {
     border: none;
     outline: none;
-    width: 100%;
-    padding: 15px 0;
+    width: 101%;
+    padding: 15px;
     color: #fff;
     font-size: 16px;
     letter-spacing: 1px;
@@ -49,6 +49,8 @@ button {
   }
   .editProfile{
       padding: 8rem;
+      padding-left: 15rem;
+      padding-right: 15rem;
       background: radial-gradient(
       ellipse at left bottom,
       rgb(16, 0, 43) 0%,
@@ -58,4 +60,17 @@ button {
     color: #fff;
     font-size: 20px;
     text-align: center;
+  }
+  .editProfileBtn{
+    margin-right: 20rem;
+    border: none;
+    outline: none;
+    width: 101%;
+    padding: 15px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background: rgb(16, 0, 43) ;
+    cursor: pointer;
+    margin-bottom: 1rem;
   }

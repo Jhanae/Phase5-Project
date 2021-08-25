@@ -15,6 +15,7 @@ function MovieElement() {
     const [profile, setProfile] = useState(JSON.parse(localStorage.getItem('profile')));
     const [favoriteID, setFavoriteID] = useState("")
     const [similar, setSimilar] = useState([])
+    const [reviews, setReviews] = useState([])
 
     var settings = {
         // dots: true,
@@ -69,17 +70,33 @@ function MovieElement() {
         }
         getSimilarMovies()
     }, [])
+    useEffect(() => {
+        async function getMovieReviews(){
+            const url = `https://api.themoviedb.org/3/movie/${movieData.id}/reviews?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US&page=1`
+        fetch(url)
+        .then(res => res.json())
+        .then((data) => setReviews(data.results))
+
+        }
+        getMovieReviews()
+    }, [])
     const similarRow = similar.map(item => {
         return <div onClick={() => handleClick(item)} class="col mb-1">
             <img className="" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
         </div>
       })
+    // reviews.slice(0,3)
+    const review = reviews.slice(2,4).map(item => {
+        return <p>{item.content}</p>
+    })
+    console.log(review)
     
     return (
         <div className=" moviePage">
             {/* <div>
                 <img src={`https://image.tmdb.org/t/p/w500/${movieData.backdrop_path}`} className="card-img-top" alt="..."/>
             </div> */}
+            <br/><br/>
             <div className="row">
                 <br/><br/><br/>
                 <h1>{movieData.title}</h1><br/><br/><br/>
@@ -101,21 +118,25 @@ function MovieElement() {
                         <th scope="col">Rating: </th>
                         <td>{movieData.vote_average}</td>
                         </tr>
+                        <tr>
+                        <th scope="col">Reviews: </th>
+                        <td>{review}</td>
+                        </tr>
                     </tbody>
                 </table>
                 </div>
                 <div className="">
                     {watched ? 
-                    <button className="watchedBtn" onClick={() => addToWatchedList()}>Watched✓</button>
+                    <button className="watchedBtn col" onClick={() => addToWatchedList()}>Watched✓</button>
                     : 
-                    <button className="watchedBtn" onClick={() => addToWatchedList()}>Watched?</button>
+                    <button className="watchedBtn col" onClick={() => addToWatchedList()}>Watched?</button>
                     }
-                    <button className="watchedBtn" onClick={() => getTrailer()}>Watch Trailer</button>
+                    <button className="watchedBtn col" onClick={() => getTrailer()}>Watch Trailer</button>
                     </div>
                 {setShowTrailer ? 
                     <ReactPlayer 
                     className="mediaPlayer" 
-                    width="1080px" 
+                    width="100%" 
                     height="480px" 
                     controls 
                     url={trailerPath} />

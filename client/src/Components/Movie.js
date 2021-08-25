@@ -17,12 +17,12 @@ function Movie({movie}) {
       }
 
     return (
-        <div onClick={() => handleClick(movie)} className="searchResults">
-            <img src={imageURL} className="poster popularImage" alt="..."/>
-            <div className="card-body">
+        <div onClick={() => handleClick(movie)} className="searchResults col">
+            <img src={imageURL} className=" " alt="..."/>
+            {/* <div className="card-body">
                 <h5 >{movie.original_title}</h5>
                 <p>{movie.overview}</p>
-            </div>
+            </div> */}
         </div>
     )
 }

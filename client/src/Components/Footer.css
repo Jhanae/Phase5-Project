@@ -11,13 +11,17 @@
     font-size: 5mm;
   }
   .subscribeInput{
-      width: 70%;
+      width: 60%;
       justify-self: center;  
+      padding: 0.4rem; 
+      border-radius: 0.3rem;
 }
   .subscribe-btn{
     background: rgb(60, 9, 108);
     color: #e3bcfa;
-    width: 70%;
-    margin-left: 12rem;
-    justify-self: center;  
+    width: 60%;
+    margin-left: 16rem;
+    justify-self: center;
+    padding: 0.4rem;  
+    border-radius: 0.3rem;
   }

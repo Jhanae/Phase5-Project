@@ -36,13 +36,16 @@ function SearchPage(){
             <h1 className="header">Search Movies</h1><br/>
             <form onSubmit={(e) => handleSubmit(e)} >
             <input required type="text" onChange={(e) => setSearchText(e.target.value)} className="searchBox" />
+            <br/><br/>
             <button className="searchBtn" type="submit">Search</button>
             </form>
             {clicked ? <p>Showing {movies.length} results for {searchText}.</p> : null}
             </div>
             <br/>
+            <div className="row">
             {movieElement}
-            <br/><br/>
+            </div>
+            {/* <br/><br/> */}
         </div>
     )
 }

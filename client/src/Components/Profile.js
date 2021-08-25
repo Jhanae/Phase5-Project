@@ -27,6 +27,12 @@ function Profile() {
     const [showRecommendations, setShowRecommendations] = useState(false)
     const [showWatched, setShowWatched] = useState(false)
     const [movieID, setMovieID] = useState("")
+
+    function handleClick(movie){
+      console.log(movie)
+      localStorage.setItem('movieData',JSON.stringify(movie))
+      history.push('/movie')
+  }
     
     const API = `https://api.themoviedb.org/3/discover/movie?api_key=dfb1cba31ae6f1dda39d14acaa225d56&with_genre=${favGenre}`
     async function getGenre(){
@@ -38,7 +44,7 @@ function Profile() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
     const genreRow = genre.map(item => {
         return <div class="col mb-1">
-          <div className="">
+          <div className="" onClick={() => handleClick(item)}>
             <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
           </div>
         </div>
@@ -65,7 +71,7 @@ function Profile() {
             .then(console.log(watched))
       }
       const watchedRow = watched.map(item => {
-      return <div class="col mb-1">
+      return <div class="col mb-1" onClick={() => handleClick(item)}>
         <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="..."/>
         </div>
     })
@@ -98,7 +104,7 @@ function Profile() {
                 </table>
                 <div><br/>
                     <div className="row">
-                    <button className="col" onClick={() => setShowWatched(!showWatched)}>Watched List</button>
+                    <button className="profileBtn col" onClick={() => setShowWatched(!showWatched)}>Watched List</button>
                     {showWatched ? 
                         <div>
                         <h3 style={{color: '#fff', textAlign: 'left'}}>Watched Movies</h3> 
@@ -107,7 +113,7 @@ function Profile() {
                         </Slider> 
                         </div>
                     : null}
-                    <button className="col" onClick={() => getGenre()}>Recommendations</button>
+                    <button className="profileBtn col" onClick={() => getGenre()}>Recommendations</button>
                     {showRecommendations ? 
                     <div>
                         <h3 style={{color: '#fff', textAlign: 'left'}}>Favorite Genre: {favGenre}</h3>
@@ -117,7 +123,7 @@ function Profile() {
                     </div>
                      : null}
                     </div>
-                    <button onClick={() => history.push('/update-profile')} className="">Edit Profile</button>
+                    <button onClick={() => history.push('/update-profile')} className="editProfileBtn">Edit Profile</button>
                 </div>
                 </div>
             </div>

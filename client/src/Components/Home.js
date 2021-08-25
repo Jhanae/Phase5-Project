@@ -3,6 +3,7 @@ import {useState, useEffect } from 'react'
 import Slider from "react-slick";
 import ReactPlayer from 'react-player';
 import { useHistory } from 'react-router-dom';
+import Logo from './Pictures/pngaaa.com-1762708.png'
 
 function Home() {
   let history = useHistory();
@@ -106,25 +107,26 @@ function Home() {
             </div>
           })
     return (
-        <div className="homePage">
-          {/* <div className="homePageHeader">
-            <h1>Movie Addict</h1>
-          </div> */}
+        <div className="homePage" style={{'fontFamily':'fantasy'}}>
+            <h1 className="homePageLogo">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            ...It’s more than just a movie!</h1>
+          <br/><br/>
           <ReactPlayer 
-            className="mediaPlayer" 
-            width="191vh" 
-            height='70vh' 
+            // className="mediaPlayer" 
+            width="189vh" 
+            height='100vh' 
             playing="true"
             muted
             loop
             url={popularTrailer} 
-            config={{
-              youtube: {
-                playerVars: { showinfo: 1 }
-              }}}
+            // config={{
+            //   youtube: {
+            //     playerVars: { showinfo: 1 }
+            //   }}}
               // fullscreen={true} 
               /> 
           <br/><br/>
+          <div className="slider">
           <h1 className="rowTitle">Most Popular</h1>
           <Slider {...settings}>
           {popularRow}
@@ -145,6 +147,7 @@ function Home() {
           {upcomingRow}
           </Slider>
           <br/><br/><br/>
+          </div>
         </div>
 
     )

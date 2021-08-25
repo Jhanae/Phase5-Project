@@ -1,6 +1,12 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-#root{
-} */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playball&family=Roboto:ital@1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif&family=Roboto:ital@1&display=swap');
+
+*{
+  font-family: 'Noto Serif', serif !important;
+  text-align: center;
+}
+
 .App {
   text-align: center;
   font-family: cursive;
@@ -19,7 +25,11 @@
   margin-right: 1rem;
 }
 .homePage{
-  background-color: #240046;
+  background-color:#10002b;
+  width: 100%;
+}
+.slider{
+  width: 99%
 }
 .rowTitle{
   color: white;
@@ -33,10 +43,10 @@
 }
 .searchResults{
   /* color: white; */
-  margin: 8rem;;
-  width: 23rem;
-  justify-self: center;
-  display: block;
+  margin-bottom: 4rem;;
+  /* width: 23rem; */
+  /* justify-self: center; */
+  /* display: block; */
 }
 .card-body{
   background: #240046;
@@ -50,6 +60,7 @@
 .searchBtn {
   border: none;
   outline: none;
+  margin-left: 1rem;
   width: 100%;
   padding: 15px 0;
   color: #fff;
@@ -89,13 +100,7 @@
 .header{
   font-weight: bold;
 }
-/* #myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-} */
+
 .Nav{
   background-color: #10002b;
 }
@@ -103,9 +108,83 @@
   background-color: #5A189A;
 }
 .homePageHeader{
-  background-color: #5A189A;
   color: #fff;
-  /* font-family:fantasy; */
-  height: 4.5rem;
-  padding-top: 1rem;
+  /* background-color: #5A189A; */
+  /* width: 40%; */
+  /* justify-self: center !important; */
+  /* display: inline-block; */
+}
+.homePageText{
+  /* font-family:'Playball', cursive !important; */
+  /* font-size: xx-large; */
+}
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+.homePageLogo{
+  font-family:'Playball', cursive !important;
+  /* float: left; */
+  margin-top: -1rem;
+  /* margin-right: 40rem; */
+  /* background-color: #5A189A; */
+  font-size: 2rem;
+  color: #fff;
+  animation: 2s ease-out 2s 1 slideInFromLeft;
+  background:#7B2CBF;
+  padding: .24rem;
+  margin-left: -1rem;
+  border-radius: 2rem;
+  width: 40%;
+  /* -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  transform: skewX(-20deg); */
+}
+
+.watchedBtn{
+  margin-right: 4rem;
+  border: none;
+  outline: none;
+  width: 40%;
+  padding: 15px;
+  color: #fff;
+  font-size: 16px;
+  letter-spacing: 1px;
+  background: rgb(16, 0, 43) ;
+  cursor: pointer;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.genreBtn{
+  background: #9D4EDD;
+  color: #e8c1ff;
+  padding: 15px;
+  font-size: 18px;
+  margin:0.4rem;
+  border-radius: 2rem;
+  border-color: #26033a;
+}
+.genreBtn:hover{
+  background: #d082fd;
+}
+.genreContainer{
+  padding: 2rem 10rem;
+}
+.categoryPage{
+  background:rgb(16, 0, 43);
+}
+.categoryResult{
+  margin-bottom: 3rem;
+}
+.logo{
+  height: 3rem;
+  padding-bottom: 1.2rem;
+}
+.categoryTitle{
+  color: #f1e1fa;
 }
