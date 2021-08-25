@@ -1,7 +1,6 @@
 import React from 'react'
 import {useState, useEffect } from 'react'
 import Slider from "react-slick";
-// import MovieElement from './MovieElement'
 import ReactPlayer from 'react-player';
 import { useHistory } from 'react-router-dom';
 
@@ -13,15 +12,9 @@ function Home() {
     const [upcoming, setUpcoming] = useState([])
     const [trending, setTrending] = useState([])
     const [popularTrailer, setPopularTrailer] = useState("")
-    const [trendingTrailer, setTrendingTrailer] = useState("")
-    const [upcomingTrailer, setUpcomingTrailer] = useState("")
-    const [npTrailer, setNPTrailer] = useState("")
-    const [path, setPath] = useState("")
-    const [showPTrailer, setPShowTrailer] = useState(false)
-    const [showUTrailer, setUShowTrailer] = useState(false)
-    const [showTTrailer, setTShowTrailer] = useState(false)
-    const [showNTrailer, setNShowTrailer] = useState(false)
-
+    const [path, setPath] = useState(localStorage.getItem('movieID'))
+    const [key, setKey] = useState("")
+    const [movieID, setMovieID] = useState("")
 
     var settings = {
       // dots: true,
@@ -47,14 +40,15 @@ function Home() {
             fetchPopular()
             
           }, [])
-    function viewPopTrailer(movieID){
+    function viewTrailer(movieID){
+      console.log(movieID)
+      let key;
       const url = `https://api.themoviedb.org/3/movie/${movieID}/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56`
       fetch(url)
       .then(res => res.json())
-      .then((data) => console.log(data.results[1].key))
+      .then((data) => localStorage.setItem("movieID", (data.results[0].key)))
   
       setPopularTrailer(`https://www.youtube.com/embed/${path}`)
-      setPShowTrailer(!showPTrailer)
     }
 
     const popularRow = popular.map(item => {
@@ -69,6 +63,8 @@ function Home() {
         const result = await fetch("https://api.themoviedb.org/3/trending/all/day?api_key=dfb1cba31ae6f1dda39d14acaa225d56");
         const items = await result.json();
         setTrending(items.results)
+        viewTrailer(items.results[0].id)
+
       }
       fetchTrending()
       
@@ -111,6 +107,23 @@ function Home() {
           })
     return (
         <div className="homePage">
+          {/* <div className="homePageHeader">
+            <h1>Movie Addict</h1>
+          </div> */}
+          <ReactPlayer 
+            className="mediaPlayer" 
+            width="191vh" 
+            height='70vh' 
+            playing="true"
+            muted
+            loop
+            url={popularTrailer} 
+            config={{
+              youtube: {
+                playerVars: { showinfo: 1 }
+              }}}
+              // fullscreen={true} 
+              /> 
           <br/><br/>
           <h1 className="rowTitle">Most Popular</h1>
           <Slider {...settings}>
@@ -131,9 +144,10 @@ function Home() {
           <Slider {...settings}>
           {upcomingRow}
           </Slider>
+          <br/><br/><br/>
         </div>
 
     )
 }
 
-export default Home
+export default Home;

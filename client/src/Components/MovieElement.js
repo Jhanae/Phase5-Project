@@ -1,7 +1,8 @@
 import React from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ReactPlayer from 'react-player';
 import { useHistory } from 'react-router-dom';
+import Slider from "react-slick";
 
 function MovieElement() {
     let history = useHistory();
@@ -13,7 +14,22 @@ function MovieElement() {
     const [movieID, setMovieID] = useState(localStorage.getItem('movieID'))
     const [profile, setProfile] = useState(JSON.parse(localStorage.getItem('profile')));
     const [favoriteID, setFavoriteID] = useState("")
+    const [similar, setSimilar] = useState([])
 
+    var settings = {
+        // dots: true,
+        infinite: true,
+        speed: 500,
+        slidesToShow: 4,
+        slidesToScroll: 2
+      };
+
+    function handleClick(movie){
+        console.log(movie)
+        localStorage.setItem('movieData',JSON.stringify(movie))
+        history.push('/movie')
+      }
+      
     function getTrailer(){
         setShowTrailer(!showTrailer)
         const url = `https://api.themoviedb.org/3/movie/${movieData.id}/videos?api_key=dfb1cba31ae6f1dda39d14acaa225d56`
@@ -41,12 +57,24 @@ function MovieElement() {
         .then(res => res.json())
         .then(data => setFavoriteID(data.id))
         }
-        // else{
-        //     await fetch(`http://localhost:3000/favorites/${favoriteID}`)
-        //     .then(res => res.json())
-        //     .then(data => console.log(data))
-        // }
+
     }
+    useEffect(() => {
+        async function getSimilarMovies(){
+            const url = `https://api.themoviedb.org/3/movie/${movieData.id}/similar?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US&page=1`
+        fetch(url)
+        .then(res => res.json())
+        .then((data) => setSimilar(data.results))
+
+        }
+        getSimilarMovies()
+    }, [])
+    const similarRow = similar.map(item => {
+        return <div onClick={() => handleClick(item)} class="col mb-1">
+            <img className="" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
+        </div>
+      })
+    
     return (
         <div className=" moviePage">
             {/* <div>
@@ -78,11 +106,11 @@ function MovieElement() {
                 </div>
                 <div className="">
                     {watched ? 
-                    <button onClick={() => addToWatchedList()}>Watched✓</button>
+                    <button className="watchedBtn" onClick={() => addToWatchedList()}>Watched✓</button>
                     : 
-                    <button  onClick={() => addToWatchedList()}>Watched?</button>
+                    <button className="watchedBtn" onClick={() => addToWatchedList()}>Watched?</button>
                     }
-                    <button onClick={() => getTrailer()}>Watch Trailer</button>
+                    <button className="watchedBtn" onClick={() => getTrailer()}>Watch Trailer</button>
                     </div>
                 {setShowTrailer ? 
                     <ReactPlayer 
@@ -92,6 +120,10 @@ function MovieElement() {
                     controls 
                     url={trailerPath} />
                 : null}
+                <h1 style={{"textAlign":"left", "fontWeight":"bold"}}>People also watched</h1>
+                 <Slider {...settings}>
+                {similarRow}
+                </Slider>
             </div>
         </div>
     )

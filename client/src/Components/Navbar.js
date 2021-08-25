@@ -1,61 +1,40 @@
 import React from 'react'
-import "./Navbar.css"
-import Logo from './Pictures/pngaaa.com-3675676 (1).png'
+// import Logo from './Pictures/spacebackground.jpeg';
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 import { useState } from 'react'
-
+import ProfileLogo from './Pictures/outline_account_circle_white_24dp 2.png';
+import HomeLogo from './Pictures/outline_home_white_24dp.png';
+import SearchLogo from './Pictures/outline_search_white_24dp.png';
+import Categories from './Pictures/outline_category_white_24dp.png';
+import Logout from './Pictures/outline_logout_white_24dp 2.png';
+import Login from './Pictures/outline_login_white_24dp.png'
 function Navigation(){
-  const [loggedIn, setLoggedIn] = useState(JSON.parse(localStorage.getItem('LoggedIn')))
-
+  const [loggedIn, setLoggedIn] = useState(localStorage.getItem('LoggedIn'))
   console.log(loggedIn)
     return (
-      <nav className=" navbar-expand-lg">
-  <div className="container-fluid">
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse" id="navbarText">
-      <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-        <li className="nav-item">
-          <a className="nav-link active" aria-current="page" href="/home">Home</a>
-        </li>
-        <li className="nav-item">
-          <a  className="nav-link" href="/search">Search</a>
-        </li>
-        { !loggedIn ?
-        <li className="nav-item">
-          <a className="nav-link" href="/">Login</a>
-        </li>
-        : 
-        <div>
-         <li className="nav-item">
-          <a onClick={setLoggedIn(!loggedIn)} className="nav-link" href="/">Logout</a>
-        </li>
-        <li className="nav-item">
-          <a className="nav-link" href="/login">Profile</a>
-        </li>
+        <div className="Nav" >
+            <Navbar sticky="top" collapseOnSelect>
+                <Navbar.Brand style={{'color' : '#e0aaff', 'marginRight':'65rem', 'marginLeft':'2rem', 'display':'flex', 'fontSize':'1.5rem'}} href="/home">
+                {/* <img src={Logo} width="40px" height="40px" alt="navLogo"/>{' '} */}
+                Movie Addict
+                </Navbar.Brand>
+
+                <Navbar.Collapse>
+                <Nav style={{'background':'#7B2CBF', 'borderRadius':'2rem', 'fontWeight':'3rem'}}>
+                    <Nav.Link style={{'color' : '#e0aaff'}} href="/home"><img src={HomeLogo} /></Nav.Link>   <br/>
+                    <Nav.Link style={{'color' : '#e0aaff'}}href="/categories"><img src={Categories} /></Nav.Link> <br/>
+                    <Nav.Link style={{'color' : '#e0aaff'}} href="/search"><img src={SearchLogo} /></Nav.Link> <br/>
+                    <Nav.Link style={{'color' : '#e0aaff'}} href="/profile"><img src={ProfileLogo}/></Nav.Link> <br/>
+                    {loggedIn ?
+                    <Nav.Link style={{'color' : '#e0aaff', 'background':'#7B2CBF', 'borderRadius':'2rem'}} href="/" onClick={() => localStorage.setItem('LoggedIn', !loggedIn)}><img src={Login}/></Nav.Link>
+                    : 
+                    <Nav.Link style={{'color' : '#e0aaff', 'background':'#7B2CBF', 'borderRadius':'2rem'}} href="/"><img src={Logout}/></Nav.Link>
+                    }
+                </Nav>
+                </Navbar.Collapse>
+
+            </Navbar>
         </div>
-      }
-      </ul>
-      <img className="navImage" src={Logo} alt="..."/>
-      <a className="navbar-brand NavTitle" href="/home">WatchingJay</a>
-    </div>
-  </div>
-</nav>
     )
-  }
-  export default Navigation
-
-
-  // <nav>
-  //   <a href="/" className="title">Watching Jay</a>
-  //   { !loggedIn ?
-  //   <div>
-  //   <a href="/login" className="nav-details" onClick={() => setLoggedIn()}>Log out</a>
-  //   <a href="/profile" className="nav-details">Profile</a> 
-  //   </div> 
-  //   : 
-  //    <a href="/login" className="nav-details">Login</a> 
-  //   }
-  //   <a href="/search" className="nav-details">Search</a>
-  //   <a href="/" className="nav-details">Movies</a>
-  // </nav>
+}
+export default Navigation

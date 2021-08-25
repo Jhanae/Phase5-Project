@@ -40,8 +40,9 @@ function SearchPage(){
             </form>
             {clicked ? <p>Showing {movies.length} results for {searchText}.</p> : null}
             </div>
-            <br/><br/><br/>
+            <br/>
             {movieElement}
+            <br/><br/>
         </div>
     )
 }

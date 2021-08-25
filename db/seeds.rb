@@ -10,7 +10,7 @@ Favorite.destroy_all
         { email: "user1@mail.com", password: "123testing"},
         { email: "bakugorules@mail.com", password: "123testing"},
         { email: "flatiron@mail.com", password: "123testing"},
-        ])
+        ]) 
 
     puts "👩🏾‍🔬 Seeding profile..."
     Profile.create([

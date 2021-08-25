@@ -13,7 +13,7 @@
     color: #fff;
     font-size: 16px;
     letter-spacing: 1px;
-    background: #1c0d70;
+    background: #10002B;
     cursor: pointer;
   }
   
@@ -21,7 +21,6 @@
     width: 100%;
     min-height: 100vh;
     padding: 0 20px;
-    background: #5c5656;
     display: flex;
   }
   
@@ -36,11 +35,11 @@
     justify-content: center;
     background: radial-gradient(
       ellipse at left bottom,
-      rgb(2, 3, 24) 0%,
-      #040b33e6 59%,
-      rgba(9, 98, 134, 0.9) 100%
+      rgb(16, 0, 43) 0%,
+      #31005f 65%,
+      rgba(199, 125, 255, 0.9) 100%
     );
-    box-shadow: 0 50px 70px -20px rgba(10, 16, 34, 0.8);
+    box-shadow: 0 50px 70px -20px rgba(60, 9, 108, 0.671);
   }
   
   .login .loginContainer label {
@@ -57,7 +56,7 @@
     outline: none;
     font-size: 19px;
     padding: 10px;
-    background: rgba(112, 173, 242, 0.233);
+    background: rgba(224, 170, 255, 0.233);
     color: #fff;
     letter-spacing: 1px;
   }
@@ -74,7 +73,7 @@
   }
   
   .login .loginContainer .btnContainer p span {
-    color: rgb(78, 175, 255);
+    color: rgb(224, 170, 255);
     font-weight: 500;
     letter-spacing: 0.5px;
     margin-left: 5px;
@@ -82,19 +81,8 @@
     transition: all 400ms ease-in-out;
   }
 
-  
-  .hero {
-    width: 100%;
-    min-height: 100vh;
-    background: radial-gradient(
-      ellipse at left bottom,
-      rgb(1, 2, 8) 0%,
-      rgba(10, 12, 85, 0.9) 59%,
-      rgba(42, 64, 136, 0.9) 100%
-    );
-  }
  .login{
-     background:rgb(3, 2, 54);
+     background:rgb(16, 0, 43);
  }
 .signupDropdown{
   border-radius: 0rem;

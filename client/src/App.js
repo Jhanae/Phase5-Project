@@ -13,6 +13,7 @@ import Signup from './Components/Signup';
 import EditProfile from './Components/EditProfile'
 import MovieElement from './Components/MovieElement';
 import Footer from './Components/Footer';
+import Categories from './Components/Categories';
 
 function App() {
   // const [movieData, setMovieData] = useState([])
@@ -45,6 +46,7 @@ function App() {
         <Route exact path="/signup" component={() => <Signup setLoggedIn={setLoggedIn} loggedIn={loggedIn} setProfile={setProfile}/>}/>
         <Route exact path="/update-profile" component={() => <EditProfile profile={profile} profileID={profile.id}/>} />
         <Route exact path="/movie" component={() => <MovieElement />}/>
+        <Route exact path="/categories" component={() => <Categories />}/>
       </Switch>
       <Footer />
       </Router>

@@ -16277,3 +16277,2106 @@ Processing by ProfilesController#show as */*
 Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.4ms | Allocations: 730)
 
 
+Started POST "/login" for ::1 at 2021-08-23 12:41:33 -0400
+  [1m[35m (2.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by AuthController#login as */*
+  Parameters: {"email"=>"user1@mail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:3:in `login'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.79ms)
+Completed 202 Accepted in 341ms (Views: 3.4ms | ActiveRecord: 19.8ms | Allocations: 15915)
+
+
+Started GET "/profiles/1" for ::1 at 2021-08-23 12:41:34 -0400
+Processing by ProfilesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:14:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.41ms)
+Completed 200 OK in 6ms (Views: 1.6ms | ActiveRecord: 0.4ms | Allocations: 1009)
+
+
+Started GET "/favorites" for ::1 at 2021-08-23 12:41:40 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.2ms)
+Completed 200 OK in 18ms (Views: 11.0ms | ActiveRecord: 4.0ms | Allocations: 4888)
+
+
+Started GET "/favorites" for ::1 at 2021-08-23 12:41:40 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.27ms)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.3ms | Allocations: 1525)
+
+
+Started GET "/favorites" for ::1 at 2021-08-23 12:41:41 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.14ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms | Allocations: 1526)
+
+
+Started GET "/favorites" for ::1 at 2021-08-23 12:41:48 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.43ms)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.4ms | Allocations: 1525)
+
+
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 13:24:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 13:24:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 13:25:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 13:29:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 15:50:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:12:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:19:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:19:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:20:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:21:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:22:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:27:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:47:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:47:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:47:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:47:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:48:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:53:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:53:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:53:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:54:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:54:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:55:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:55:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:55:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 16:55:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 17:00:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/NiFuJV2GLkY" for 127.0.0.1 at 2021-08-23 17:01:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/NiFuJV2GLkY"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:09:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:10:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:10:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:10:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:16:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:16:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:16:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/image" for 127.0.0.1 at 2021-08-23 17:23:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/image"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:24:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:25:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:25:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:28:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:32:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:39:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:39:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:40:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:40:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:40:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:41:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:41:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:43:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:43:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:44:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:45:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:45:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:45:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:45:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:54:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:54:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:55:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:57:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:58:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:58:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:58:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:58:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:58:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:59:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:59:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 17:59:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 18:02:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 18:02:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 18:02:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 18:03:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:04:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:04:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:04:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:09:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:10:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:10:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:12:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:12:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:13:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:13:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:15:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:16:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:17:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:17:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:18:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:18:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:18:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:19:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:19:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:19:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:20:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:20:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:21:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:24:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:24:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:24:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:26:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:26:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:26:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started POST "/login" for ::1 at 2021-08-23 20:27:02 -0400
+Processing by AuthController#login as */*
+  Parameters: {"email"=>"user1@mail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:3:in `login'
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (3.93ms)
+Completed 202 Accepted in 354ms (Views: 5.4ms | ActiveRecord: 44.9ms | Allocations: 3829)
+
+
+Started GET "/profiles/1" for ::1 at 2021-08-23 20:27:02 -0400
+Processing by ProfilesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:14:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.32ms)
+Completed 200 OK in 5ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 740)
+
+
+Started GET "/profiles" for ::1 at 2021-08-23 20:27:18 -0400
+Processing by ProfilesController#index as */*
+  [1m[36mProfile Load (3.9ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles"[0m
+  ↳ app/controllers/profiles_controller.rb:20:in `index'
+No serializer found for resource: #<Profile id: 2, user_id: 2, username: "Backugo", image: "https://wallpapercave.com/wp/wp5624831.jpg", fav_actor: "Will Smith", fav_region: "USA", fav_genre: "Drama", created_at: "2021-08-20 20:36:27.732080000 +0000", updated_at: "2021-08-20 20:36:27.732080000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Profile::ActiveRecord_Relation (0.96ms)
+Completed 200 OK in 8ms (Views: 4.1ms | ActiveRecord: 3.9ms | Allocations: 1241)
+
+
+Started PATCH "/profiles/1" for ::1 at 2021-08-23 20:27:27 -0400
+Processing by ProfilesController#update as */*
+  Parameters: {"username"=>"", "favActor"=>"", "favGenre"=>"", "favRegion"=>"", "id"=>"1", "profile"=>{"username"=>""}}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:24:in `update'
+[31mUnpermitted parameters: :favActor, :favGenre, :favRegion, :id, :profile[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Exists? (3.0ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mCACHE Profile Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:26:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.34ms)
+Completed 200 OK in 24ms (Views: 0.8ms | ActiveRecord: 4.1ms | Allocations: 4560)
+
+
+Started PATCH "/profiles/1" for ::1 at 2021-08-23 20:27:34 -0400
+Processing by ProfilesController#update as */*
+  Parameters: {"username"=>"Sheryl", "favActor"=>"", "favGenre"=>"", "favRegion"=>"", "id"=>"1", "profile"=>{"username"=>"Sheryl"}}
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:24:in `update'
+[31mUnpermitted parameters: :favActor, :favGenre, :favRegion, :id, :profile[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Update (9.2ms)[0m  [1m[33mUPDATE "profiles" SET "username" = $1, "updated_at" = $2 WHERE "profiles"."id" = $3[0m  [["username", "Sheryl"], ["updated_at", "2021-08-24 00:27:34.495369"], ["id", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (6.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:26:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.26ms)
+Completed 200 OK in 33ms (Views: 0.7ms | ActiveRecord: 18.0ms | Allocations: 4724)
+
+
+Started PATCH "/profiles/1" for ::1 at 2021-08-23 20:27:36 -0400
+Processing by ProfilesController#update as */*
+  Parameters: {"username"=>"Sheryl", "favActor"=>"", "favGenre"=>"Adventure", "favRegion"=>"", "id"=>"1", "profile"=>{"username"=>"Sheryl"}}
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:24:in `update'
+[31mUnpermitted parameters: :favActor, :favGenre, :favRegion, :id, :profile[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mCACHE Profile Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:26:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.27ms)
+Completed 200 OK in 13ms (Views: 0.9ms | ActiveRecord: 1.8ms | Allocations: 4050)
+
+
+Started PATCH "/profiles/1" for ::1 at 2021-08-23 20:27:37 -0400
+Processing by ProfilesController#update as */*
+  Parameters: {"username"=>"Sheryl", "favActor"=>"Will Smith", "favGenre"=>"Adventure", "favRegion"=>"", "id"=>"1", "profile"=>{"username"=>"Sheryl"}}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:24:in `update'
+[31mUnpermitted parameters: :favActor, :favGenre, :favRegion, :id, :profile[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mCACHE Profile Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:26:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.26ms)
+Completed 200 OK in 13ms (Views: 0.8ms | ActiveRecord: 1.5ms | Allocations: 4049)
+
+
+Started PATCH "/profiles/1" for ::1 at 2021-08-23 20:27:40 -0400
+Processing by ProfilesController#update as */*
+  Parameters: {"username"=>"Sheryl", "favActor"=>"Will Smith", "favGenre"=>"Adventure", "favRegion"=>"USA", "id"=>"1", "profile"=>{"username"=>"Sheryl"}}
+  [1m[36mProfile Load (0.6ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:24:in `update'
+[31mUnpermitted parameters: :favActor, :favGenre, :favRegion, :id, :profile[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mCACHE Profile Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:26:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.31ms)
+Completed 200 OK in 17ms (Views: 0.9ms | ActiveRecord: 1.9ms | Allocations: 4048)
+
+
+Started PATCH "/profiles/1" for ::1 at 2021-08-23 20:27:41 -0400
+Processing by ProfilesController#update as */*
+  Parameters: {"username"=>"Sheryl", "favActor"=>"Will Smith", "favGenre"=>"Adventure", "favRegion"=>"USA", "id"=>"1", "profile"=>{"username"=>"Sheryl"}}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:24:in `update'
+[31mUnpermitted parameters: :favActor, :favGenre, :favRegion, :id, :profile[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mProfile Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/profiles_controller.rb:25:in `update'
+  [1m[36mCACHE Profile Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "profiles" WHERE "profiles"."user_id" = $1 AND "profiles"."id" != $2 LIMIT $3[0m  [["user_id", 1], ["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:26:in `update'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.34ms)
+Completed 200 OK in 17ms (Views: 1.0ms | ActiveRecord: 2.0ms | Allocations: 4045)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:27:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:27:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:27:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:27:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:27:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:28:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started POST "/login" for ::1 at 2021-08-23 20:28:30 -0400
+Processing by AuthController#login as */*
+  Parameters: {"email"=>"user1@mail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:3:in `login'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.48ms)
+Completed 202 Accepted in 250ms (Views: 1.0ms | ActiveRecord: 0.9ms | Allocations: 1394)
+
+
+Started GET "/profiles/1" for ::1 at 2021-08-23 20:28:31 -0400
+Processing by ProfilesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.3ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:14:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.47ms)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.3ms | Allocations: 727)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:28:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-23 20:28:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-23 20:29:01 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (2.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.18ms)
+Completed 200 OK in 9ms (Views: 5.7ms | ActiveRecord: 2.8ms | Allocations: 1507)
+
+
+Started GET "/favorites" for ::1 at 2021-08-23 20:29:05 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.03ms)
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1504)
+
+
+Started GET "/favorites" for ::1 at 2021-08-23 20:29:05 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.0ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 1504)
+
+
+Started GET "/favorites" for ::1 at 2021-08-23 20:29:13 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.53ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.6ms | Allocations: 1503)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 00:19:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/PlanetData" for ::1 at 2021-08-24 00:40:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/PlanetData"):
+  
+Started GET "/PlanetData" for ::1 at 2021-08-24 09:26:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/PlanetData"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:45:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:46:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:46:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:47:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:47:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:47:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:48:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:49:16 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:49:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:49:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:51:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:53:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:53:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:53:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:53:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:54:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:55:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:55:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:55:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:55:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:56:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:56:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:56:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 09:56:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:02:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:02:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:02:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:02:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:03:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:04:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:04:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:04:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:05:19 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:05:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:05:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:06:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:06:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:06:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:06:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:07:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:07:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:08:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:08:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:08:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:09:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:10:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:10:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:10:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:10:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:11:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:11:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:12:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:12:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:12:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:13:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:13:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:13:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:19:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:27:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:27:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:27:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:28:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:29:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:29:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:29:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:30:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:36:13 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:53:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:54:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:56:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:56:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:58:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:59:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 10:59:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:00:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:00:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:00:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:00:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:00:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:00:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:00:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:05:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:05:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:05:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:08:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:09:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:12:45 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:13:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:16:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:16:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:17:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:17:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:18:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:19:39 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:20:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:20:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:20:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:21:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:21:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:22:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:22:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:24:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:24:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:24:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:24:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:24:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:25:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:25:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:25:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:25:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 11:25:28 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 12:42:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 12:42:32 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:04:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:05:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:05:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:05:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:09:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:09:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:09:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:10:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:11:27 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:11:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:12:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:12:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:13:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:14:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:14:23 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:14:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:15:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:15:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started POST "/login" for ::1 at 2021-08-24 13:15:49 -0400
+Processing by AuthController#login as */*
+  Parameters: {"email"=>"user1@mail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:3:in `login'
+  [1m[36mProfile Load (0.5ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.93ms)
+Completed 202 Accepted in 301ms (Views: 1.8ms | ActiveRecord: 26.7ms | Allocations: 3563)
+
+
+Started GET "/profiles/1" for ::1 at 2021-08-24 13:15:49 -0400
+Processing by ProfilesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:14:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.35ms)
+Completed 200 OK in 4ms (Views: 1.2ms | ActiveRecord: 0.4ms | Allocations: 730)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:41 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:16:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:17:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:19:21 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:20:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:21:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:21:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:21:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:21:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:21:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:21:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:22:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:24:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:24:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:24:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:25:00 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:25:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:25:15 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:26:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:26:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:26:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:26:35 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:26:50 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:26:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:28:29 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:28:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:28:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:32:58 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started POST "/favorites" for ::1 at 2021-08-24 13:34:30 -0400
+Processing by FavoritesController#create as */*
+  Parameters: {"movie_id"=>436969, "profile_id"=>1, "movieName"=>"The Suicide Squad", "favorite"=>{"movieName"=>"The Suicide Squad", "movie_id"=>436969, "profile_id"=>1}}
+[31mUnpermitted parameter: :favorite[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mFavorite Exists? (4.4ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."movie_id" = $1 LIMIT $2[0m  [["movie_id", 436969], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mProfile Load (0.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mFavorite Create (5.8ms)[0m  [1m[32mINSERT INTO "favorites" ("movieName", "movie_id", "profile_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["movieName", "The Suicide Squad"], ["movie_id", 436969], ["profile_id", 1], ["created_at", "2021-08-24 17:34:30.913429"], ["updated_at", "2021-08-24 17:34:30.913429"]]
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mFavorite Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."movie_id" = $1 AND "favorites"."id" != $2 LIMIT $3[0m  [["movie_id", 436969], ["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Favorite (0.23ms)
+Completed 201 Created in 51ms (Views: 0.8ms | ActiveRecord: 21.3ms | Allocations: 6531)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:34:46 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:37:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-24 13:37:17 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (0.94ms)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1589)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:37:18 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.99ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.5ms | Allocations: 1590)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:37:19 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.19ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.4ms | Allocations: 1590)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:37:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:37:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-24 13:37:58 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.2ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.58ms)
+Completed 200 OK in 5ms (Views: 5.0ms | ActiveRecord: 0.2ms | Allocations: 1589)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:37:58 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.11ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.4ms | Allocations: 1590)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:37:58 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (0.86ms)
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.3ms | Allocations: 1590)
+
+
+Started POST "/favorites" for ::1 at 2021-08-24 13:38:06 -0400
+Processing by FavoritesController#create as */*
+  Parameters: {"movie_id"=>706972, "profile_id"=>1, "movieName"=>"Narco Sub", "favorite"=>{"movieName"=>"Narco Sub", "movie_id"=>706972, "profile_id"=>1}}
+[31mUnpermitted parameter: :favorite[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mFavorite Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."movie_id" = $1 LIMIT $2[0m  [["movie_id", 706972], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mFavorite Create (0.4ms)[0m  [1m[32mINSERT INTO "favorites" ("movieName", "movie_id", "profile_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["movieName", "Narco Sub"], ["movie_id", 706972], ["profile_id", 1], ["created_at", "2021-08-24 17:38:06.520069"], ["updated_at", "2021-08-24 17:38:06.520069"]]
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/favorites_controller.rb:11:in `create'
+  [1m[36mFavorite Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "favorites" WHERE "favorites"."movie_id" = $1 AND "favorites"."id" != $2 LIMIT $3[0m  [["movie_id", 706972], ["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/favorites_controller.rb:12:in `create'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Favorite (0.17ms)
+Completed 201 Created in 15ms (Views: 0.7ms | ActiveRecord: 2.4ms | Allocations: 4029)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:38:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-24 13:38:10 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.36ms)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.5ms | Allocations: 1676)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:38:10 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.01ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:38:10 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.04ms)
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:38:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:42:01 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:42:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-24 13:42:22 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (0.97ms)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.3ms | Allocations: 1676)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:42:24 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.86ms)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:42:25 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.04ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 1679)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:42:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-24 13:42:37 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.08ms)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:42:38 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-24 13:42:39 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.25ms)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:42:49 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (0.86ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:48:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/favorites" for ::1 at 2021-08-24 13:49:01 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.86ms)
+Completed 200 OK in 38ms (Views: 37.7ms | ActiveRecord: 18.9ms | Allocations: 3789)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 13:52:54 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.11ms)
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:53:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:53:54 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:58:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:59:33 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 13:59:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:00:04 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:01:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:03:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:04:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:04:11 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:04:53 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:04:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:04:56 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:04:57 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:08:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:08:52 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:09:10 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:12:37 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:13:06 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:16:24 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:16:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:16:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:21:43 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:22:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:22:17 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:22:18 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:23:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:23:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:23:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:23:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:23:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:23:48 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:23:55 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:05 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:09 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:30 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:24:59 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:25:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:25:14 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:25:20 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:25:36 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:25:42 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:26:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:26:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:28:07 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:28:12 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:52:02 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 14:52:03 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 15:02:44 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 15:02:49 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 15:03:26 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 15:03:31 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 15:03:51 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started GET "/css/video-react.css" for 127.0.0.1 at 2021-08-24 15:07:22 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/css/video-react.css"):
+  
+Started POST "/login" for ::1 at 2021-08-24 15:22:00 -0400
+Processing by AuthController#login as */*
+  Parameters: {"email"=>"user1@mail.com", "password"=>"[FILTERED]", "auth"=>{"email"=>"user1@mail.com", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "user1@mail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:3:in `login'
+  [1m[36mProfile Load (1.7ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."user_id" = $1 LIMIT $2[0m  [["user_id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/auth_controller.rb:11:in `login'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Hash (0.9ms)
+Completed 202 Accepted in 300ms (Views: 1.9ms | ActiveRecord: 24.7ms | Allocations: 3565)
+
+
+Started GET "/profiles/1" for ::1 at 2021-08-24 15:22:00 -0400
+Processing by ProfilesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mProfile Load (0.4ms)[0m  [1m[34mSELECT "profiles".* FROM "profiles" WHERE "profiles"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/profiles_controller.rb:14:in `show'
+[active_model_serializers] Rendered ActiveModel::Serializer::Null with Profile (0.3ms)
+Completed 200 OK in 23ms (Views: 1.0ms | ActiveRecord: 0.4ms | Allocations: 731)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:23:23 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (1.0ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.52ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 1.0ms | Allocations: 1678)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:23:23 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.8ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.69ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 1678)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:23:27 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.83ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.5ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:23:27 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.37ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.6ms | Allocations: 1678)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:23:34 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.88ms)
+Completed 200 OK in 20ms (Views: 19.5ms | ActiveRecord: 0.4ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:23:35 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.66ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.4ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:31:39 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.9ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.19ms)
+Completed 200 OK in 31ms (Views: 30.6ms | ActiveRecord: 8.2ms | Allocations: 3764)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:31:39 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (2.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.95ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 2.7ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:32:35 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.62ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.5ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:32:35 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.84ms)
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:33:25 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.41ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:33:25 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.59ms)
+Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.5ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:07 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (1.0ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.77ms)
+Completed 200 OK in 67ms (Views: 66.7ms | ActiveRecord: 49.9ms | Allocations: 3765)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:07 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (5.7ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.67ms)
+Completed 200 OK in 36ms (Views: 30.2ms | ActiveRecord: 5.7ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:08 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.48ms)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.5ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:08 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.75ms)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:20 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.95ms)
+Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.4ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:20 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.6ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (2.01ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.6ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:29 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (2.5ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.9ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 2.5ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:42:29 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.4ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.7ms)
+Completed 200 OK in 5ms (Views: 4.7ms | ActiveRecord: 0.4ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:44:02 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.59ms)
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+
+Started GET "/favorites" for ::1 at 2021-08-24 15:44:02 -0400
+Processing by FavoritesController#index as */*
+  [1m[36mFavorite Load (0.3ms)[0m  [1m[34mSELECT "favorites".* FROM "favorites"[0m
+  ↳ app/controllers/favorites_controller.rb:4:in `index'
+No serializer found for resource: #<Favorite id: 1, movieName: "Jungle Cruise", movie_id: 451048, profile_id: 1, created_at: "2021-08-20 20:40:27.890509000 +0000", updated_at: "2021-08-20 20:40:27.890509000 +0000">
+[active_model_serializers] Rendered ActiveModel::Serializer::CollectionSerializer with Favorite::ActiveRecord_Relation (1.79ms)
+Completed 200 OK in 6ms (Views: 5.1ms | ActiveRecord: 0.3ms | Allocations: 1677)
+
+

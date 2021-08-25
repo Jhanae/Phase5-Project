@@ -1,6 +1,6 @@
 .main-footer{
-    color: rgb(37, 92, 245);
-    background: black;
+    color: rgb(224, 170, 255);
+    background-color: #10002b;
     padding-top: 1rem;
     bottom: 0;
     align-content: center;
@@ -11,12 +11,13 @@
     font-size: 5mm;
   }
   .subscribeInput{
-      width: 80%;
-  }
+      width: 70%;
+      justify-self: center;  
+}
   .subscribe-btn{
-    background: rgb(77, 77, 241);
-    color: white;
-    outline: auto rgb(77, 77, 241);
-    width: 80%;
-    margin-left: 6rem;
+    background: rgb(60, 9, 108);
+    color: #e3bcfa;
+    width: 70%;
+    margin-left: 12rem;
+    justify-self: center;  
   }

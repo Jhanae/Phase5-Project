@@ -43,7 +43,7 @@ function Profile() {
           </div>
         </div>
       });
-
+      useEffect(() => {
       async function getWatched(){
         const result = await fetch("http://localhost:3000/favorites");
         const items = await result.json();
@@ -52,8 +52,9 @@ function Profile() {
         filtered.map(item => {
           getMovie(item)
         })
-        setShowWatched(!showWatched)
       }
+      getWatched()
+    }, [])
       function getMovie(movie){
         fetch(`https://api.themoviedb.org/3/movie/${movie.movie_id}?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US`)
             .then(result => result.json())
@@ -69,7 +70,8 @@ function Profile() {
         </div>
     })
     return (
-                <div className="profileContainer row ">
+      <div className="profileContainer">
+                <div className="profile row ">
                     <h1 className="" style={{color: '#fff'}}>Welcome {profile.username}!</h1>
                     <img className="profileImage col" src={profile.image} alt="..."/>
                     <table class="table profileData col">
@@ -96,7 +98,7 @@ function Profile() {
                 </table>
                 <div><br/>
                     <div className="row">
-                    <button className="col" onClick={() => getWatched()}>Watched List</button>
+                    <button className="col" onClick={() => setShowWatched(!showWatched)}>Watched List</button>
                     {showWatched ? 
                         <div>
                         <h3 style={{color: '#fff', textAlign: 'left'}}>Watched Movies</h3> 
@@ -115,9 +117,10 @@ function Profile() {
                     </div>
                      : null}
                     </div>
-                    <button onClick={() => history.push('/update-profile')} className="col">Edit Profile</button>
+                    <button onClick={() => history.push('/update-profile')} className="">Edit Profile</button>
                 </div>
                 </div>
+            </div>
     )
 }
 

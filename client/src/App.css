@@ -1,46 +1,25 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+#root{
+} */
 .App {
   text-align: center;
-  font-family: 'Times New Roman', Times, serif;
+  font-family: cursive;
 }
-
 .trending-div{
   background:black;
   height: 150vh;
+  
 }
 .trending-img{
   height: 70%;
   width: 420rem;
 }
-.login-page {
-  height: 100vh;
-  width: 100rem;
-  display: flex;
-  /* background: linear-gradient(170deg, rgb(0, 0, 2), midnightblue); */
 
-  background-image: url(https://image.tmdb.org/t/p/w500/464N3J1i6L5SsazPmX9m3q1GiZ3.jpg);
-  background-repeat: no-repeat;
-  /* position: absolute; top: 0; left: 0; height: 100%; width: 100%; */
-}
-.login-form{
-  background: linear-gradient(170deg, rgb(0, 0, 2), midnightblue);
-  max-width: 30rem;
-  display: inline-block;
-  height: 18rem;
-  width: 30rem;
-  color: white;
-  font-family:fantasy;
-  padding-top: 2rem;
-  border-radius: 2rem;
-  font-size: 18px;
-}
-/* .popularCarousel{
-  display:block;
-} */
 .popularImage{
   margin-right: 1rem;
 }
 .homePage{
-  background: linear-gradient(170deg, rgb(0, 0, 2), midnightblue);
+  background-color: #240046;
 }
 .rowTitle{
   color: white;
@@ -53,10 +32,19 @@
   width: 23rem;
 }
 .searchResults{
-  color: white;
+  /* color: white; */
+  margin: 8rem;;
+  width: 23rem;
+  justify-self: center;
+  display: block;
+}
+.card-body{
+  background: #240046;
+  outline: none;
+  border: none;
 }
 .searchPage{
-  background: rgb(15, 23, 56);
+  background-color: #10002B;
   color: white;
 }
 .searchBtn {
@@ -67,7 +55,7 @@
   color: #fff;
   font-size: 16px;
   letter-spacing: 1px;
-  background: #1c0d70;
+  background: #10002B;
   cursor: pointer;
 }
 .searchContainer {
@@ -80,15 +68,15 @@
   flex-direction: column;
   justify-content: center;
   background: radial-gradient(
-    ellipse at left bottom,
-    rgb(2, 3, 24) 0%,
-    #040b33e6 59%,
-    rgba(9, 98, 134, 0.9) 100%
-  );
-  box-shadow: 0 50px 70px -20px rgba(10, 16, 34, 0.8);
+      ellipse at left bottom,
+      #10002B 3%,
+      #31005f 69%,
+      rgba(199, 125, 255, 0.9) 100%
+    );
+    box-shadow: 0 50px 70px -20px rgba(60, 9, 108, 0.671);
 }
 .moviePage{
-  background:rgb(0, 0, 2);
+  background-color: #240046;
   color: #fff;
   font-size: larger;
 }
@@ -100,4 +88,24 @@
 }
 .header{
   font-weight: bold;
+}
+/* #myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+} */
+.Nav{
+  background-color: #10002b;
+}
+.watchedBtn{
+  background-color: #5A189A;
+}
+.homePageHeader{
+  background-color: #5A189A;
+  color: #fff;
+  /* font-family:fantasy; */
+  height: 4.5rem;
+  padding-top: 1rem;
 }

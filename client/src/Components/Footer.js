@@ -8,9 +8,9 @@ function Footer(){
                 <div className="row">
                     {/* column 1 */}
                     <div className="col">
-                        <h4>WatchingJay</h4>
+                        <h4>Movie Junkie</h4>
                         <ul className="list-unstyled">
-                            <li>Soar into the world of film.</li>
+                            <li>It’s more than just a movie!</li>
                             <li>Created with React, Ruby on Rails and TMDB API.</li>
                         </ul>
                     </div>
@@ -26,8 +26,7 @@ function Footer(){
                 </div>
                 {/* <hr/> */}
                 <div className="row">
-                    <p className="col-sm">
-                        &copy;{new Date().getFullYear()} JAY'S LIST INC | All rights reserved | Terms of Service | Privacy
+                    <p className="col-sm">MOVIE JUNKIE INC | All rights reserved | Terms of Service | Privacy
                     </p> 
                 </div>
                 <input type="email" className=" mb-3 subscribeInput" placeholder="  Join our Newsletter" aria-label="" />
