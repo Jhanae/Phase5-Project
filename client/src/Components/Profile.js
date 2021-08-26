@@ -60,6 +60,14 @@ function Profile() {
         })
       }
       getWatched()
+
+        async function getGenre(){
+            const url = 'https://api.themoviedb.org/3/genre/movie/list?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US'
+            await fetch(url)
+            .then(result => result.json()) 
+            .then(data => setGenre(data.genres))
+        }
+        getGenre()
     }, [])
       function getMovie(movie){
         fetch(`https://api.themoviedb.org/3/movie/${movie.movie_id}?api_key=dfb1cba31ae6f1dda39d14acaa225d56&language=en-US`)
@@ -71,9 +79,11 @@ function Profile() {
             .then(console.log(watched))
       }
       const watchedRow = watched.map(item => {
-      return <div class="col mb-1" onClick={() => handleClick(item)}>
-        <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} alt="..."/>
-        </div>
+      return <div class="col mb-1">
+      <div className="" onClick={() => handleClick(item)}>
+        <img className="popularImage" src={`https://image.tmdb.org/t/p/w500/${item.poster_path}`} class="card-img-top" alt="..."/>
+      </div>
+    </div>
     })
     return (
       <div className="profileContainer">
