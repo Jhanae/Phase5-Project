@@ -139,7 +139,7 @@ function EditProfile({profileID}) {
         </Form.Group>
         <Form.Group className="mb-3">
         </Form.Group>
-        <button className="profile-btn">
+        <button className="profile-btn loginBtn">
           Save Changes
         </button>
       </Form>
