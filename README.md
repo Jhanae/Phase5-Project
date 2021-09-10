@@ -1,9 +1,8 @@
-# Project Template: React/Rails API
+# Movie Addict
 
 ## Description
-
-This project is scaffolded so that you can build a React frontend and Rails
-backend together, and easily deploy them to Heroku.
+Movie Addict is a movie recommendation site equipped with trailers, reviews, and ratings.
+Demo: https://vimeo.com/594250486 
 
 ## Requirements
 
@@ -291,6 +290,4 @@ For additional support, check out these guides on Heroku:
 [postgres downloads page]: https://postgresapp.com/downloads.html
 [heroku rails deploying guide]: https://devcenter.heroku.com/articles/getting-started-with-rails6
 [troubleshooting guide on heroku]: https://devcenter.heroku.com/articles/getting-started-with-rails6#troubleshooting
-# Phase4Project
-# Phase4Project
-# Phase4Project
+
